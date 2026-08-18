@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameHub - فید</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">GameHub</div>
+      <a href="index.html" class="nav-item active">🏠 <span>خانه</span></a>
+      <a href="search.html" class="nav-item">🔍 <span>جستجو</span></a>
+      <a href="#" id="navProfile" class="nav-item">👤 <span>پروفایل</span></a>
+      <a href="settings.html" class="nav-item">⚙️ <span>تنظیمات</span></a>
+      <button class="nav-item" id="logoutBtn" style="margin-top:auto">🚪 <span>خروج</span></button>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="header-bar">خانه</div>
+
+      <!-- Compose -->
+      <div class="compose" id="composeBox">
+        <img id="composeAvatar" class="avatar" src="" alt="">
+        <div style="flex:1">
+          <textarea id="postContent" placeholder="چه خبر از دنیای گیم؟ #هشتگ" maxlength="500"></textarea>
+          <div id="mediaPreview" style="display:none;margin:8px 0"></div>
+          <div class="compose-actions">
+            <div>
+              <label style="cursor:pointer;color:var(--primary)">
+                📷 عکس/ویدیو
+                <input type="file" id="mediaInput" accept="image/*,video/*" style="display:none">
+              </label>
+            </div>
+            <button class="btn btn-primary" id="postBtn">ارسال</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feed -->
+      <div id="feed">
+        <div class="spinner"></div>
+      </div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="right-sidebar">
+      <div class="widget glass">
+        <h3>🔥 ترندینگ</h3>
+        <div id="trending"></div>
+      </div>
+      <div class="widget glass">
+        <h3>پیشنهاد دنبال کردن</h3>
+        <div id="suggestions"></div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/feed.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameHub - جستجو</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">GameHub</div>
+      <a href="index.html" class="nav-item">🏠 <span>خانه</span></a>
+      <a href="search.html" class="nav-item active">🔍 <span>جستجو</span></a>
+      <a href="#" id="navProfile" class="nav-item">👤 <span>پروفایل</span></a>
+      <a href="settings.html" class="nav-item">⚙️ <span>تنظیمات</span></a>
+      <button class="nav-item" id="logoutBtn" style="margin-top:auto">🚪 <span>خروج</span></button>
+    </aside>
+    <main class="main">
+      <div class="header-bar">جستجو</div>
+      <div style="padding:16px">
+        <input type="text" id="searchInput" placeholder="جستجوی کاربر، هشتگ یا پست..." style="width:100%;padding:14px 20px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:999px;color:var(--text);font-size:1rem;font-family:inherit;outline:none">
+      </div>
+      <div id="searchResults"></div>
+    </main>
+    <aside class="right-sidebar"></aside>
+  </div>
+  <script src="js/supabase.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

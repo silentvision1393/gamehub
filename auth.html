@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameHub - ورود / ثبت‌نام</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card glass">
+      <h1>GameHub</h1>
+      <p>شبکه اجتماعی گیمرها</p>
+
+      <div class="tabs">
+        <div class="tab active" data-tab="login">ورود</div>
+        <div class="tab" data-tab="signup">ثبت‌نام</div>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label>ایمیل</label>
+          <input type="email" id="loginEmail" required placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+          <label>رمز عبور</label>
+          <input type="password" id="loginPassword" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">ورود</button>
+      </form>
+
+      <form id="signupForm" style="display:none">
+        <div class="form-group">
+          <label>نام نمایشی</label>
+          <input type="text" id="signupDisplayName" required placeholder="نام شما">
+        </div>
+        <div class="form-group">
+          <label>نام کاربری (یکتا)</label>
+          <input type="text" id="signupUsername" required placeholder="username" pattern="[a-zA-Z0-9_]{3,20}">
+        </div>
+        <div class="form-group">
+          <label>ایمیل</label>
+          <input type="email" id="signupEmail" required>
+        </div>
+        <div class="form-group">
+          <label>رمز عبور (حداقل ۶ کاراکتر)</label>
+          <input type="password" id="signupPassword" required minlength="6">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">ثبت‌نام</button>
+      </form>
+
+      <p id="authError" style="color:var(--danger);text-align:center;margin-top:16px;display:none"></p>
+    </div>
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
